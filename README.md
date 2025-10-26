@@ -10,7 +10,7 @@
 ## 🚀 Tech Stack
 - **Framework:** Next.js 15
 - **Language:** TypeScript
-- **Styling:** CSS Modules
+- **Styling:** Tailwind CSS
 - **Deployment:** Vercel
 
 ## 💥 배포 주소
