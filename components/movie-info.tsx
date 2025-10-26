@@ -1,12 +1,9 @@
-import { API_URL } from "../lib/constant";
-
-export async function getMovie(id: string) {
-  const response = await fetch(`${API_URL}/${id}`, { cache: "force-cache" });
-  return response.json();
-}
+import { getMovie } from "../lib/api";
+import FavoriteButton from "./favorite-button";
 
 export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 w-4/5 mx-auto">
       <img
@@ -20,6 +17,8 @@ export default async function MovieInfo({ id }: { id: string }) {
         <a href={movie.homepage} target={"_blank"}>
           Homepage &rarr;
         </a>
+
+        <FavoriteButton id={movie.id} />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "About Us",
+  title: "Favorites",
 };
 
-export default function AboutUsLayout({
+export default function FavoritesLayout({
   children,
 }: {
   children: React.ReactNode;

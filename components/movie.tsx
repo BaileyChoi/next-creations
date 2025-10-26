@@ -1,31 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useMovieStore } from "../lib/store";
 
 interface IMovieProps {
   title: string;
-  id: string;
+  id: number;
   poster_path: string;
 }
 
 export default function Movie({ title, id, poster_path }: IMovieProps) {
-  const router = useRouter();
-  const onClick = () => {
-    router.push(`/movies/${id}`);
-  };
+  const favorites = useMovieStore((s) => s.favorites);
+  const isFav = favorites.includes(id);
 
   return (
-    <div className="grid grid-rows-[1fr_auto] gap-5 place-items-center cursor-pointer">
+    <Link href={`/movies/${id}`} prefetch className="group relative block">
       <img
         src={poster_path}
         alt={title}
-        onClick={onClick}
-        className="max-w-full min-h-full rounded-xl transition-opacity duration-300 opacity-70 hover:opacity-100"
+        className="rounded-xl transition-opacity duration-300 opacity-80 hover:opacity-100"
       />
-      <Link prefetch href={`/movies/${id}`} className="text-center">
-        {title}
-      </Link>
-    </div>
+      {isFav && (
+        <span className="absolute right-3 top-3 bg-red-600/90 text-xs px-2 py-1 rounded-md">
+          ⭐
+        </span>
+      )}
+      <h3 className="mt-2 text-center">{title}</h3>
+    </Link>
   );
 }
