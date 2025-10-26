@@ -1,9 +1,6 @@
-import styles from "../styles/movie-info.module.css";
 import { API_URL } from "../lib/constant";
 
 export async function getMovie(id: string) {
-  // console.log(`Fetching movies: ${Date.now()}`);
-  //   await new Promise((resolve) => setTimeout(resolve, 5000));
   const response = await fetch(`${API_URL}/${id}`, { cache: "force-cache" });
   return response.json();
 }
@@ -11,12 +8,15 @@ export async function getMovie(id: string) {
 export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
   return (
-    <div className={styles.container}>
-      <img src={movie.poster_path} className={styles.poster} />
-      <div className={styles.info}>
-        <h1 className={styles.title}>{movie.title}</h1>
-        <h3>⭐{movie.vote_average.toFixed(1)}</h3>
-        <p>{movie.overview}</p>
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 w-4/5 mx-auto">
+      <img
+        src={movie.poster_path}
+        className="rounded-2xl max-w-[70%] place-self-center"
+      />
+      <div className="flex flex-col mt-5 gap-5">
+        <h1 className="text-white text-3xl font-semibold">{movie.title}</h1>
+        <h3 className="text-lg">⭐{movie.vote_average.toFixed(1)}</h3>
+        <p className="text-gray-300 leading-relaxed">{movie.overview}</p>
         <a href={movie.homepage} target={"_blank"}>
           Homepage &rarr;
         </a>
