@@ -1,9 +1,9 @@
-# next-creations
+# 🎬 Next Movies
 
-> Next.js 15로 진행하는 클론코딩 및 미니 프로젝트 레포지토리입니다.
+> Nomad Coders의 Movie API를 기반으로 한 영화 정보 프로젝트입니다.
 
-이 레포지토리는 다양한 실습을 통해 Next.js의 최신 기능과 프로젝트 구조를 익히고,  
-이를 바탕으로 향후 포트폴리오로 확장하기 위해 만들어졌습니다.
+Next.js 15의 App Router 구조와 최신 기능을 직접 적용하며,
+서버 컴포넌트·클라이언트 컴포넌트 분리, Zustand 상태 관리, Tailwind UI 설계 등을 학습했습니다.
 
 ---
 
@@ -11,7 +11,8 @@
 - **Framework:** Next.js 15
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
+- **State Management:** Zustand
 - **Deployment:** Vercel
 
 ## 💥 배포 주소
-- **Vercel** : [nextjs-movies](https://nextjs-movies-rho.vercel.app/)
+- **Vercel** : [next-movies](https://nextjs-movies-rho.vercel.app/)
