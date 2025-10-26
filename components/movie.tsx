@@ -21,8 +21,8 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
         className="rounded-xl transition-opacity duration-300 opacity-80 hover:opacity-100"
       />
       {isFav && (
-        <span className="absolute right-3 top-3 bg-red-600/90 text-xs px-2 py-1 rounded-md">
-          ⭐
+        <span className="absolute right-3 top-3 bg-[#4A4A4A] text-sm px-2.5 pt-1 pb-2 rounded-md ">
+          ★
         </span>
       )}
       <h3 className="mt-2 text-center">{title}</h3>

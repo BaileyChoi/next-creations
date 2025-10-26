@@ -7,10 +7,5 @@ export default function FavoritesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      {children}
-      &copy; Next JS is great!!!
-    </div>
-  );
+  return <>{children}</>;
 }
