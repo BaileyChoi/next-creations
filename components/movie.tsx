@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMovieStore } from "../lib/store";
+import { IMG_BASE_URL } from "../lib/constant";
 
 interface IMovieProps {
   title: string;
@@ -16,7 +17,7 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
   return (
     <Link href={`/movies/${id}`} prefetch className="group relative block">
       <img
-        src={poster_path}
+        src={`${IMG_BASE_URL}${poster_path}`}
         alt={title}
         className="rounded-xl transition-opacity duration-300 opacity-80 hover:opacity-100"
       />
